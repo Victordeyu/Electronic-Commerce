@@ -1,0 +1,19 @@
+/* pages/login/login.wxss */
+.login {
+    margin-top:  80rpx;
+    margin-left: 300rpx;
+}
+
+.register{
+  margin-top: 30rpx;
+  margin-left: 200rpx;
+}
+
+text{
+  font-size: small;
+}
+
+.res-btn{
+  border: none;
+  font-size: 10pt !important;
+}

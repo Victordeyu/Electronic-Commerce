@@ -1,0 +1,66 @@
+<!--pages/home2/components/goods/goods.wxml-->
+<view class="goods">
+<van-search
+  value="{{ value }}"
+  shape="round"
+  background="#4fc08d"
+  placeholder="请输入搜索关键词"
+/>
+
+<van-card
+  num=""
+  tag="标签"
+  price="0.00"
+  desc="描述信息"
+  title="商品标题"
+  thumb="{{ imageURL }}"
+>
+  <view  slot="footer" >
+    <van-button size="mini">查看</van-button>
+    <van-button size="mini">修改</van-button>
+  </view>
+</van-card>
+
+
+<van-card
+  num=""
+  tag="标签"
+  price="0.00"
+  desc="描述信息"
+  title="商品标题"
+  thumb="{{ imageURL }}"
+>
+  <view class="twoBtn" slot="footer" >
+    <van-button size="mini">查看</van-button>
+    <van-button size="mini">修改</van-button>
+  </view>
+</van-card>
+
+<van-card
+  num=""
+  tag="标签"
+  price="0.00"
+  desc="描述信息"
+  title="商品标题"
+  thumb="{{ imageURL }}"
+>
+  <view class="twoBtn" slot="footer" >
+    <van-button size="mini">查看</van-button>
+    <van-button size="mini">修改</van-button>
+  </view>
+</van-card>
+
+<van-card
+  num=""
+  tag="标签"
+  price="0.00"
+  desc="描述信息"
+  title="商品标题"
+  thumb="{{ imageURL }}"
+>
+  <view class="twoBtn" slot="footer" >
+    <van-button size="mini">查看</van-button>
+    <van-button size="mini">修改</van-button>
+  </view>
+</van-card>
+</view>

@@ -1,0 +1,34 @@
+<!--pages/login/login.wxml-->
+<view>
+<view>
+<van-cell-group>
+  <van-field
+    value="{{ username }}"
+    required
+    clearable
+    label="商家名"
+    icon="question-o"
+    placeholder="请输入商家名"
+    bind:click-icon="onClickIcon"
+    bind:change="onChange"
+  />
+
+  <van-field
+    value="{{ password }}"
+    type="password"
+    label="密码"
+    placeholder="请输入密码"
+    required
+    border="{{ false }}"
+    bind:change="onChange"
+  />
+</van-cell-group>
+</view>
+<view class="login">
+<van-button size="normal" type="primary"  bind:click="onClicklogin">登录</van-button>
+</view>
+<view class="register">
+  <text>还没有账号？ </text>
+  <button type="primary" plain style="width:25vw" class="res-btn"  size="mini" >注册</button>
+</view>
+</view>

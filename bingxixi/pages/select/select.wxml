@@ -1,0 +1,7 @@
+<!--pages/select/select.wxml-->
+<view class="button">
+          <block class="block">
+          <van-button class="button1" type="primary" plain bind:click="onClick1" >用户</van-button>
+          <van-button type="primary" plain bind:click="onClick2">商家</van-button>
+          </block>
+</view>

@@ -1,0 +1,14 @@
+<!--pages/home2/home2.wxml-->
+
+
+<view>
+<van-tabbar active="{{ active }}" bind:change="onChange">
+  <van-tabbar-item icon="home-o" name="order">订单</van-tabbar-item>
+  <van-tabbar-item icon="search" name="goods">商品</van-tabbar-item>
+  <van-tabbar-item icon="setting-o" name="personal">我的</van-tabbar-item>
+</van-tabbar>
+
+<tabbar_order wx:if="{{active == 'order'}}" />
+<tabbar_goods wx:if="{{active == 'goods'}}" />
+<tabbar_personal wx:if="{{active == 'personal'}}" />
+</view>

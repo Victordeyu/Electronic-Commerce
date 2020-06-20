@@ -1,0 +1,27 @@
+<!--pages/orderInfo/orderInfo.wxml-->
+<van-steps steps="{{ steps }}" active="{{ active }}" />
+<van-card
+  num="0"
+  price="0.00"
+  desc="描述信息"
+  title="商品标题"
+  thumb="{{ imageURL }}"
+/>
+<van-card
+  num="0"
+  price="0.00"
+  desc="描述信息"
+  title="商品标题"
+  thumb="{{ imageURL }}"
+/>
+<van-card
+  num="0"
+  price="0.00"
+  desc="描述信息"
+  title="商品标题"
+  thumb="{{ imageURL }}"
+/>
+
+<view class="btn">
+<van-button type="primary">确认接单</van-button>
+</view>

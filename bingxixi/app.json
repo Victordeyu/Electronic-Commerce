@@ -1,0 +1,37 @@
+{
+  "pages":[
+    "pages/select/select",
+    "pages/home2/home2",
+    "pages/login/login",
+    "pages/orderInfo/orderInfo",
+    "pages/index/index",
+    "pages/category/index",
+    "pages/good_list/index",
+    "pages/good_details/index",
+    "pages/cart/index",
+    "pages/collect/index",
+    "pages/order/index",
+    "pages/search/index",
+    "pages/user/index",
+    "pages/feedback/index",
+    "pages/login/index",
+    "pages/auth/index",
+    "pages/pay/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "米奇的口袋",
+    "navigationBarTextStyle":"black"
+  },
+  
+  "sitemapLocation": "sitemap.json",
+  "useExtendedLib": {
+    "weui": true
+  },
+  "usingComponents": {
+    "van-button": "vant-weapp/button"
+  }
+  
+}
+

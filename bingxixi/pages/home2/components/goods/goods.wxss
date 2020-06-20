@@ -1,0 +1,9 @@
+.goods{
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+van-card{
+  border: 2rpx solid black;
+  box-sizing: border-box;
+}

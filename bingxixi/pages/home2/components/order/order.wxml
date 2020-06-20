@@ -1,0 +1,27 @@
+<!--pages/home2/components/order/order.wxml.wxml-->
+<van-cell
+  is-link
+  title="订单编号****"
+  link-type="navigateTo"
+  url="/pages/orderInfo/orderInfo"
+/>
+
+<van-cell
+  is-link
+  title="订单编号****"
+  link-type="navigateTo"
+  url="/pages/orderInfo/orderInfo"
+/>
+
+<van-cell
+  is-link
+  title="订单编号****"
+  link-type="navigateTo"
+  url="/pages/orderInfo/orderInfo"
+/>
+<van-cell
+  is-link
+  title="订单编号****"
+  link-type="navigateTo"
+  url="/pages/orderInfo/orderInfo"
+/>

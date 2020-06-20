@@ -1,0 +1,30 @@
+<!--pages/personal/personal.wxml-->
+<van-cell-group>
+  <van-field
+    value="{{store-name}}"
+    required
+    clearable
+    label="店铺名"
+    icon="question-o"
+    placeholder="请输入店铺名"
+    bind:click-icon="onClickIcon"
+  />
+
+  <van-field
+    value="{{ address }}"
+    type="password"
+    label="商家发货地址"
+    placeholder="请输入商家发货地址"
+    required
+    border="{{ false }}"
+  />
+</van-cell-group>
+<van-cell-group>
+  <van-field
+    value="{{ description }}"
+    placeholder="请输入商铺描述"
+    border="{{ false }}"
+    bind:change="onChange2"
+  />
+</van-cell-group>
+
