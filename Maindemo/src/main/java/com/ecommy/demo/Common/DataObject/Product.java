@@ -6,15 +6,20 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import org.hibernate.annotations.DynamicUpdate;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Entity
 @Data
 @DynamicUpdate
-@ApiModel(value="Prodect",description = "商品")
+@EntityListeners(AuditingEntityListener.class)
+@ApiModel(value="Product",description = "商品")
 @Table(name="product")
 public class Product {
 
@@ -47,6 +52,18 @@ public class Product {
     @ApiModelProperty("所属商家的Id")
     @Column(name = "seller_id")
     private String sellerId;
+
+    @ApiModelProperty("销量")
+    @Column(name="sales")
+    private int sales;
+
+    @CreatedDate
+    @Column(name = "ord_time")
+    private Date createTime;
+
+    @LastModifiedDate
+    @Column(name="update_time")
+    private Date updateTime;
 
 //    @OneToMany(cascade = CascadeType.ALL,fetch=FetchType.EAGER)
 //    @JoinColumn(name="ProductID")

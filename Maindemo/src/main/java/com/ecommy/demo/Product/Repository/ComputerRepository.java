@@ -11,4 +11,10 @@ public interface ComputerRepository extends JpaRepository<ComputerProduct,String
     ComputerProduct findBySingleId(String singleId);
 
     void deleteBySingleId(String singleId);
+
+    void deleteByProductId(String productId);
+
+    List<ComputerProduct> findByProductId(String productId);
+
+    List<ComputerProduct> findBySellerId(String sellerId);
 }

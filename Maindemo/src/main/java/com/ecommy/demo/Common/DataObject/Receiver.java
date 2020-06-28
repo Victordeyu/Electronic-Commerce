@@ -3,11 +3,11 @@ package com.ecommy.demo.Common.DataObject;
 import io.swagger.annotations.ApiModel;
 import lombok.Data;
 import org.hibernate.annotations.DynamicUpdate;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
@@ -16,6 +16,7 @@ import java.util.Date;
 @Data
 @Table(name="receiver")
 @DynamicUpdate
+@EntityListeners(AuditingEntityListener.class)
 @ApiModel(value="receiver",description = "收货地址")
 public class Receiver {
     @Column(length = 32)
@@ -57,12 +58,12 @@ public class Receiver {
     @NotNull
     private int status;
 
-    //创建时间
-    @Column(columnDefinition = "timestamp default current_timestamp")
+    @CreatedDate
+    @Column(name = "ord_time")
     private Date createTime;
 
-    //更新时间
-    @Column(columnDefinition = "timestamp default current_timestamp on update current_timestamp")
+    @LastModifiedDate
+    @Column(name="update_time")
     private Date updateTime;
 
     public int getStatus(){

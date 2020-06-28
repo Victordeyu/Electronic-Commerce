@@ -10,4 +10,10 @@ public interface PhoneRepository extends JpaRepository<PhoneProduct,String> {
     PhoneProduct findBySingleId(String singleId);
 
     void deleteBySingleId(String singleId);
+
+    void deleteByProductId(String productId);
+
+    List<PhoneProduct> findBySellerId(String sellerId);
+
+    List<PhoneProduct> findByProductId(String productId);
 }

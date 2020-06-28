@@ -1,18 +1,24 @@
 package com.ecommy.demo.Common.DataObject;
 
 
+import com.ecommy.demo.Common.Enums.OrderStatusEnum;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import org.hibernate.annotations.DynamicUpdate;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.Date;
 
 @Entity
 @Table(name="order_detail")
 @Data
 @DynamicUpdate
+@EntityListeners(AuditingEntityListener.class)
 @ApiModel(value="OrderDetail",description = "订单详情")
 public class OrderDetail {
 
@@ -49,5 +55,17 @@ public class OrderDetail {
     @ApiModelProperty("小计价格")
     @Column(name="det_price")//,columnDefinition = "int comment '小计价格'")
     private int accountPrice;
+
+    @ApiModelProperty("订单状态")
+    @Column(name = "ord_status")//columnDefinition = "int comment '订单状态'")
+    private Integer orderStatus= OrderStatusEnum.NORMAL.getCode();
+
+    @CreatedDate
+    @Column(name = "ord_time")
+    private Date createTime;
+
+    @LastModifiedDate
+    @Column(name="update_time")
+    private Date updateTime;
 
 }

@@ -29,7 +29,7 @@ public class ProductForm {
     @ApiModelProperty("商品种类")
     private int cateGory;
 
-    @ApiModelProperty("商品种类")
+    @ApiModelProperty("商品所属商家")
     private String sellerId;
 
     @ApiModelProperty("URL")

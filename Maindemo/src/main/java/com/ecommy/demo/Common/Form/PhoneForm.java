@@ -36,6 +36,9 @@ public class PhoneForm {
     @ApiModelProperty("单品价格")
     private int price;
 
+    @ApiModelProperty("商品所属商家")
+    private String sellerId;
+
     @ApiModelProperty("图片URL")
     private String url;
 

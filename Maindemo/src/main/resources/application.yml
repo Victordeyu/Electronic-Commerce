@@ -22,3 +22,12 @@ server:
   port: 8080
   servlet:
     context-path: /sell
+
+wechat:
+  appId: wx484ce8b92a084a0b
+  apiKey: 51VH03mx78j0gindrijxJYs6qJY76q8Y
+  appSecret: c02eeb52ebfa3fd99a94f8dc8e412628
+  openAppId: wx6ad144e54af67d87
+  openAppSecret: 91a2ff6d38a2bbccfb7e9f9079108e2e
+  mchId: 1502953181
+  notifyUrl:  http://sell.natapp4.cc/sell/pay/notify

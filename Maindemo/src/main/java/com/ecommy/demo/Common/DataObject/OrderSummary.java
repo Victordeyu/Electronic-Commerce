@@ -6,6 +6,9 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import org.hibernate.annotations.DynamicUpdate;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 
 import javax.persistence.*;
@@ -15,6 +18,7 @@ import java.util.Date;
 @Table(name="order_summary")
 @Data
 @DynamicUpdate
+@EntityListeners(AuditingEntityListener.class)
 @ApiModel(value="OrderSummary",description = "订单摘要")
 public class OrderSummary {
 
@@ -24,12 +28,26 @@ public class OrderSummary {
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String orderId;
 
-    /**
-     * 缺买家和卖家的openid
-     */
-    @ApiModelProperty("卖家的openid")
+
+    @ApiModelProperty("卖家的账号")
     @Column(name = "seller_id")//columnDefinition = "varchar(255) comment '卖家的openid'")
-    private String sellerOpenId;
+    private String sellerAccount;
+
+    @ApiModelProperty("姓名")
+    @Column(length = 32)
+    private String buyerName;
+
+    @ApiModelProperty("手机号")
+    @Column(name="buyer_phone")
+    private String buyerPhone;
+
+    @ApiModelProperty("地址id")
+    @Column(name="address_id")
+    private String buyerAddressId;
+
+    @ApiModelProperty("地址信息")
+    @Column(name="address")
+    private String buyerAddress;
 
     @ApiModelProperty("买家的openid")
     @Column(name = "buyer_id")//columnDefinition = "varchar(255) comment '买家的openid'")
@@ -47,7 +65,12 @@ public class OrderSummary {
     @Column(name = "ord_account")// columnDefinition = "int comment '订单价格'")
     private Integer orderAccount;
 
-    @Column(name = "ord_time")// columnDefinition = "timestamp default current_timestamp")
+    @CreatedDate
+    @Column(name = "ord_time")
     private Date createTime;
+
+    @LastModifiedDate
+    @Column(name="update_time")
+    private Date updateTime;
 
 }

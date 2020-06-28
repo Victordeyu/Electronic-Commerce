@@ -6,6 +6,10 @@ public interface BuyerService {
 
     OrderDTO findOrderOne(String openid, String orderId);
 
+    OrderDTO payOrder(String openid, String orderId);
+
     OrderDTO cancelOrder(String openid, String orderId);
+
+    void cancelOrderDetail(String orderId,String singleId);
 
 }

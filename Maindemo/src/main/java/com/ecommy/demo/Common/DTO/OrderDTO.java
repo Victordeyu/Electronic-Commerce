@@ -6,8 +6,10 @@ import com.ecommy.demo.Common.Enums.EnumUtil;
 import com.ecommy.demo.Common.Enums.OrderStatusEnum;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
+import javax.persistence.Column;
 import java.util.Date;
 import java.util.List;
 
@@ -15,19 +17,25 @@ import java.util.List;
 @ApiModel(value="OrderDTO",description = "订单")
 public class OrderDTO {
 
-    private String OrderId;
+    private String orderId;
 
-    private String BuyerOpenId;
+    private String buyerOpenId;
 
-    private String BuyerAddress;
+    private String sellerAccount;
 
-    private String BuyerNumber;
+    private String buyerName;
 
-    private int OrderAccount;
+    private String buyerPhone;
 
-    private Integer OrderStatus;
+    private String buyerAddressId;
 
-    private Date Time;
+    private String buyerAddress;
+
+    private int orderAccount;
+
+    private Integer orderStatus;
+
+    private Date createTime;
 
     List<OrderDetail> OrderDetailList;
 
@@ -35,7 +43,7 @@ public class OrderDTO {
 
     @JsonIgnore
     public OrderStatusEnum GetOrderStatusEnum(){
-        return EnumUtil.GetByCode(OrderStatus, OrderStatusEnum.class);
+        return EnumUtil.GetByCode(orderStatus, OrderStatusEnum.class);
     }
 
 

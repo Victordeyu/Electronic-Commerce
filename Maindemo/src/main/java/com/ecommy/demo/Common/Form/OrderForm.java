@@ -17,8 +17,8 @@ public class OrderForm {
     /**
      * 缺买家和卖家的openid
      */
-    @ApiModelProperty("卖家的openid")
-    private String sellerOpenId;
+    @ApiModelProperty("卖家的账号")
+    private String sellerAccount;
 
     @ApiModelProperty("买家的openid")
     private String buyerOpenId;
@@ -27,11 +27,26 @@ public class OrderForm {
 //    @Column(name = "sin_id", columnDefinition = "bigint comment '单品id'")
 //    private String singleId;
 
+    @ApiModelProperty("姓名")
+    private String buyerName;
+
+    @ApiModelProperty("手机号")
+    private String buyerPhone;
+
+    @ApiModelProperty("地址id")
+    private String buyerAddressId;
+
+    @ApiModelProperty("地址信息")
+    private String buyerAddress;
+
     @ApiModelProperty("订单状态")
     private Integer orderStatus= OrderStatusEnum.NORMAL.getCode();
 
     @ApiModelProperty("订单价格")
-    private Integer orderAccount;
+    private int orderAccount;
+
+    @ApiModelProperty("单品列表")
+    private String items;
 
     private Date createTime;
 

@@ -11,7 +11,13 @@ import java.util.List;
 public interface OrderSummaryRepository extends JpaRepository <OrderSummary,String>{
     List<OrderSummary> findByBuyerOpenId(String BuyerOenpId);
 
+    OrderSummary findByOrderId(String orderId);
+
+    List<OrderSummary> findBySellerAccount(String sellerAccount);
+
     Page<OrderSummary> findByOrOrderStatus(@Param("orderStatus") Integer orderStatus, Pageable pageable);
 
     Page<OrderSummary> findByOrderStatusNot(@Param("orderStatus") Integer orderStatus, Pageable pageable);
+
+    List<OrderSummary> findBySellerAccountAndOrderStatus(String sellerAccount,Integer orderStatus);
 }

@@ -7,10 +7,10 @@ import lombok.Data;
 
 @Data
 @ApiModel(value="Product",description = "商品")
-public class ProductVO {
+public class ProductVO implements Comparable<ProductVO>{
 
     @ApiModelProperty("商品序号")
-    private String productID;
+    private String productId;
 
     @ApiModelProperty("商品名字")
     private String productName;
@@ -23,4 +23,18 @@ public class ProductVO {
 
     @ApiModelProperty("商品种类")
     private int cateGory;
+
+    @ApiModelProperty("商品所属商家")
+    private String sellerId;
+
+    @ApiModelProperty("URL")
+    private String url;
+
+    @ApiModelProperty("Sale")
+    private int sales;
+
+    @Override
+    public int compareTo(ProductVO productVO) {
+        return productVO.getSales()-this.sales;
+    }
 }

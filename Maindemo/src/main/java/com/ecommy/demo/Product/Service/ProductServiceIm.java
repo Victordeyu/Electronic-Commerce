@@ -6,6 +6,7 @@ import com.ecommy.demo.Product.Repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 import java.util.List;
 
 @Service
@@ -18,6 +19,34 @@ public class ProductServiceIm implements ProductService {
     @Override
     public Product findOne(String ProductId) {
         return repository.findById(ProductId).orElse(null);
+    }
+
+    @Override
+    public List<Product> findBySellerId(String sellerId) {
+        return repository.findBySellerId(sellerId);
+    }
+
+    @Override
+    public List<Product> findBySellerIdAndProductStatus(String sellerId, Integer status) {
+        return repository.findBySellerIdAndProductStatus(sellerId, status);
+    }
+
+    @Override
+    public Product findBySingleId(String singleId) {
+        return null;
+    }
+
+    @Override
+    public void setSales(String productId, int sale) {
+        Product product=findOne(productId);
+        product.setSales(sale);
+        repository.save(product);
+    }
+
+    @Override
+    public void increaseSales(String productId, int change) {
+        Product product=findOne(productId);
+        setSales(productId,product.getSales()+change);
     }
 
     @Override
@@ -58,5 +87,20 @@ public class ProductServiceIm implements ProductService {
     @Override
     public List<Product> findOffAll() {
         return repository.findByProductStatus(ProductStatusEnum.DOWN.getCode());
+    }
+
+    @Override
+    public List<Product> findByCategory(int cateGory) {
+        return repository.findByCateGory(cateGory);
+    }
+
+    @Override
+    public List<Product> findByCategoryAndStatus(int cateGory, Integer status) {
+        return repository.findByCateGoryAndProductStatus(cateGory,status);
+    }
+
+    @Override
+    public List<Product> findByProductDescOrProductNameLike(String Keyword) {
+        return repository.findByProductDescOrProductNameLike("%"+Keyword+"%");
     }
 }

@@ -4,13 +4,18 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import org.hibernate.annotations.DynamicUpdate;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name="phone_product")
 @Data
 @DynamicUpdate
+@EntityListeners(AuditingEntityListener.class)
 @ApiModel(value="Computer",description = "手机")
 public class PhoneProduct {
 
@@ -54,9 +59,28 @@ public class PhoneProduct {
     @Column(name = "sin_price")//columnDefinition = "int comment '商品价格'")
     private int price;
 
+    @ApiModelProperty("商品所属商家")
+    private String sellerId;
+
     @ApiModelProperty("图片URL")
     @Column(name = "sin_url")
     private String url;
+
+    @ApiModelProperty("单品类别")
+    @Column(name = "cateGory")
+    private int cateGory=2;
+
+    @ApiModelProperty("销量")
+    @Column(name="sales")
+    private int sales;
+
+    @CreatedDate
+    @Column(name = "ord_time")
+    private Date createTime;
+
+    @LastModifiedDate
+    @Column(name="update_time")
+    private Date updateTime;
 
 //    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY,
 //            optional=false)
