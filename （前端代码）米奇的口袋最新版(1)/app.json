@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/select/select",
+    "pages/login/login",
+    "pages/register/register",
+    "pages/orderInfo/orderInfo",
+    "pages/singleInfo/singleInfo",
+    "pages/addGood/addGood",
+    "pages/alterGood/alterGood",
+    "pages/addSingle/addSingle",
+    "pages/alterSingle/alterSingle",
+    "pages/seller_goods/seller_goods",
+    "pages/seller_order/seller_order",
+    "pages/seller_my/seller_my",
+    "pages/seller_report/seller_report",
+    "pages/index/index",
+    "pages/category/index",
+    "pages/good_list/index",
+    "pages/good_details/index",
+    "pages/cart/index",
+    "pages/collect/index",
+    "pages/order/index",
+    "pages/search/index",
+    "pages/user/index",
+    "pages/feedback/index",
+    "pages/login/index",
+    "pages/auth/index",
+    "pages/pay/index",
+    "pages/order_detail/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "米奇的口袋",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "useExtendedLib": {
+    "weui": true
+  },
+  "usingComponents": {
+    "van-button": "vant-weapp/button"
+  }
+}

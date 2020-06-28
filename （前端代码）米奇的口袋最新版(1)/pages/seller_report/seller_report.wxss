@@ -1,0 +1,9 @@
+/* pages/seller_report/seller_report.wxss */
+.Btns{
+  display: flex;
+  margin-top: 30rpx;
+}
+
+.btn {
+  font-size: 30rpx;
+}

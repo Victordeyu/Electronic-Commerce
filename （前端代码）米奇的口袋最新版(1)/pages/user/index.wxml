@@ -1,0 +1,85 @@
+
+<view class="user_info_wrap">
+    <view wx:if="{{userInfo.avatarUrl}}" class="user_img_wrap">
+        <image class="user_bg" src="{{userInfo.avatarUrl}}"></image>
+        <view class="user_info">
+            <image class="user_icon" src="{{userInfo.avatarUrl}}"></image>
+            <view class="user_name">{{userInfo.nickName}}</view>
+        </view>
+    </view>
+    <view wx:else class="user_btn">
+        <navigator url="/pages/login/index">登录</navigator>
+    </view>
+</view>
+
+<view class="user_content" >
+
+    <view class="user_main">
+        <!--历史足迹-->
+        <view class="history_wrap">
+            <navigator>
+                <view class="his_num">0</view>
+                <view class="his_name">这是啥</view>
+            </navigator>
+            <navigator>
+                <view class="his_num">0</view>
+                <view class="his_name">干嘛的</view>
+            </navigator>
+            <navigator>
+                <view class="his_num">0</view>
+                <view class="his_name">拿来看的</view>
+            </navigator>
+            <navigator>
+                <view class="his_num">0</view>
+                <view class="his_name">都没有功能</view>
+            </navigator>
+        </view>
+        <!--我的订单-->
+        <view class="orders_wrap">
+            <view class="orders_title">我的订单</view>
+            <view class="order_content">
+                <navigator url="/pages/order/index?type=0" data-type='0'>
+                    <view class="iconfont icon-dingdan" ></view>
+                    <view class="order_name">全部订单</view>
+                </navigator>
+                <navigator url="/pages/order/index?type=1" data-type='1'>
+                    <view class="iconfont icon-fukuan" ></view>
+                    <view class="order_name">待付款</view>
+                </navigator>
+                <navigator url="/pages/order/index?type=2" data-type='2'>
+                    <view class="iconfont icon-wuliu" ></view>
+                    <view class="order_name">物流</view>
+                </navigator>
+                <navigator url="/pages/order/index?type=3" data-type='3'> 
+                    <view class="iconfont icon-icon5" ></view>
+                    <view class="order_name">退款/退货</view>
+                </navigator>
+            </view>
+        </view>
+        <!--收货地址-->
+        <view class="address_wrap">
+            收货地址管理
+        </view>
+        <!--应用信息相关-->
+        <view class="app_info_wrap">
+            <view class="app_info_item app_info_contact">
+                <text>联系客服</text>
+                <text>110</text>
+            </view>
+            <view class="app_info_item">意见反馈（假的）</view>
+            <view class="app_info_item">关于我们（假的）</view>
+        </view>
+        <!--推荐给别人-->
+        <view class="recommend_wrap">
+            把米奇的口袋推荐给其他人
+        </view>
+    </view>
+    
+</view>
+
+ <van-tabbar active="{{ active }}" bind:change="onChange">
+  <van-tabbar-item icon="home-o" >首页</van-tabbar-item>
+  <van-tabbar-item icon="apps-o">分类</van-tabbar-item>
+  <van-tabbar-item icon="shopping-cart-o">购物车</van-tabbar-item>
+  <van-tabbar-item icon="friends-o">我的</van-tabbar-item>
+</van-tabbar>

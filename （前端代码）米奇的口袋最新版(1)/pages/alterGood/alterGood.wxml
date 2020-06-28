@@ -1,0 +1,31 @@
+<!--pages/alterGood/alterGood.wxml-->
+<view class="layout-fill layout-column">
+  <form bindsubmit="formSubmit" class="flex">
+    <view class='mana-form '>
+      <view class="text-right flex">商品分类</view>
+      <input class="form-contral" name="cateGory" placeholder='请输入商品分类' value="{{cateGory===1?'电脑' :'手机'}}" />
+    </view>
+
+ <view class='mana-form '>
+      <view class="text-right flex">商品描述</view>
+      <input class="form-contral" name="productDesc" placeholder='请输入商品描述' value='{{productDesc}}' />
+    </view>
+
+
+    <view class='mana-form '>
+      <view class="text-right flex">商品名称</view>
+      <input class="form-contral" name="productName" placeholder='请输入商品名称' value='{{productName}}' />
+    </view>
+  
+
+
+     <view class='mana-form '>
+      <view class="text-right flex">商品图片</view>
+      <input class="form-contral" name="url" plceholder='请输入商品图片链接' value='{{url}}' />
+    </view>
+
+    <button formType="submit" style='margin-top:2em;' class="manage-action">保存</button>
+  </form>
+
+</view>
+

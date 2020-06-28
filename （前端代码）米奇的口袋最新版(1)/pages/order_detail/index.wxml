@@ -1,0 +1,49 @@
+<!--收获地址-->
+<view class="receive_address_row">
+  <view class="user_info_row">
+    <view class="user_info">
+      <view>{{buyerName}}</view>
+      <view>{{buyerAddress}}</view>
+    </view>
+    <view class="user_phone">{{buyerPhone}} </view>
+  </view>
+</view>
+<!--购物车内容-->
+<view class="cart_content">
+  <view class="cart_title"></view>
+  <view class="cart_main">
+  <!--cart数组长度为0显示xxx-->
+      <view class="cart_item"
+     wx:for="{{good}}"
+     wx:key="singleId"
+     wx:for-index="index"
+     >
+      <!--商品图片-->
+      <navigator class="cart_img_wrap" url="/pages/good_details/index?productId={{item.productId}}">
+        <image class="" src="{{item.url}}" mode="aspectFit|aspectFill|widthFix">
+            
+        </image>
+      </navigator>
+      <!--商品信息-->
+      <view class="cart_info_warp">
+        <view class="goods_name">{{item.color}}  {{item.cpu}} {{item.memory}}+{{item.disk}}</view>
+        <button class="button" size="mini" hidden="{{orderDetailList[index].orderStatus===2||orderDetailList[index].orderStatus===0}}" bindtap="handleReturn" data-item="{{orderDetailList[index]}}">退款</button>
+        <view class="goods_price_wrap">
+          <view class="goods_price">{{item.price}}</view>
+          <view class="cart_num_tool">
+            <view class="goods_num">X {{item.num}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</view>
+
+
+
+<view class="footer_tool">
+  <button class="order_pay_wrap" bindtap="handleCancelOrder" hidden="{{cancel||status===2}}">取消订单</button>
+  
+  <button class="order_pay_wrap" bindtap="pay" hidden="{{status===2||status===1||status===3||status===4}}">付款</button>
+</view>

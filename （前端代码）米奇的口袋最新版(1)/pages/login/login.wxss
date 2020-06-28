@@ -1,0 +1,36 @@
+/* pages/login/login.wxss */
+.login {
+    margin-top:  80rpx;
+}
+
+.register{
+  margin-top: 30rpx;
+  margin-left: 200rpx;
+}
+
+text{
+  font-size: small;
+}
+
+.res-btn{
+  border: none;
+  font-size: 10pt !important;
+}
+
+.mana-form{
+  padding: .5em 1em;
+  display: flex;
+  flex-direction: row;
+  font-size: 32rpx;
+  line-height: 52rpx;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.mana-form .form-label{
+  text-align: right;
+}
+
+.form-contral{
+  width: 75%;
+  margin-left: 1em;
+}

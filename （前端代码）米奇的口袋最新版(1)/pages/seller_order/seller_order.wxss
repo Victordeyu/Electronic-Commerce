@@ -1,0 +1,9 @@
+/* pages/seller_order/seller_order.wxss */
+.Btns{
+  display: flex;
+  margin-top: 30rpx;
+}
+
+.btn {
+  font-size: 30rpx;
+}

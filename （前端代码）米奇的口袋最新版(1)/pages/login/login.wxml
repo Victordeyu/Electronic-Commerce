@@ -1,0 +1,20 @@
+<!--pages/login/login.wxml-->
+<view>
+    <view class='mana-form '>
+      <view class="text-right flex">商家账号</view>
+      <input class="form-contral" name="account" bindinput="accountInput" placeholder='请输入账号' value='{{account}}' />
+    </view>
+
+    <view class='mana-form '>
+      <view class="text-right flex">密码</view>
+      <input class="form-contral" type="password" name="password" bindinput="passwordInput" placeholder='请输入密码' value='{{password}}' />
+    </view>
+
+<view class="login">
+<button size="normal" type="primary"  bindtap="onClicklogin" >登录</button>
+</view>
+<view class="register">
+  <text>还没有账号？ </text>
+  <button type="primary" bindtap="onClickRegister" plain style="width:25vw" class="res-btn"  size="mini" >注册</button>
+</view>
+</view>

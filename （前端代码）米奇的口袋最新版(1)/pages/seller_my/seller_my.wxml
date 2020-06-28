@@ -1,0 +1,29 @@
+<!--pages/seller_my/seller_my.wxml-->
+<view class="layout-fill layout-column">
+  <form bindsubmit="formSubmit" class="flex">
+ <view class='mana-form '>
+      <view class="text-right flex">手机号码</view>
+      <input class="form-contral" name="sellerMobile" placeholder='请输入手机号码' value='{{sellerMobile}}' />
+    </view>
+
+    <view class='mana-form '>
+      <view class="text-right flex">商家名称</view>
+      <input class="form-contral" name="sellerName" placeholder='请输入商家名称' value='{{sellerName}}' />
+    </view>
+
+    <button formType="submit" style='margin-top:2em;' class="manage-action">保存</button>
+  </form>
+
+</view>
+
+
+
+<view>
+<van-tabbar active="{{ active }}" bind:change="onChange">
+  <van-tabbar-item icon="home-o" name="order">订单</van-tabbar-item>
+  <van-tabbar-item icon="search" name="goods">商品</van-tabbar-item>
+  <van-tabbar-item icon="setting-o" name="personal">我的</van-tabbar-item>
+</van-tabbar>
+</view>
+
+

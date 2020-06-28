@@ -1,0 +1,25 @@
+/* pages/seller_my/seller_my.wxss */
+.mana-form{
+  padding: .5em 1em;
+  display: flex;
+  flex-direction: row;
+  font-size: 32rpx;
+  line-height: 52rpx;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.mana-form .form-label{
+  text-align: right;
+}
+
+.form-contral{
+  width: 75%;
+  margin-left: 1em;
+}
+
+.manage-action{
+  border-radius: 0;
+  background-color: #f5a22d;
+  color: #fff;
+  width: 50%;
+}

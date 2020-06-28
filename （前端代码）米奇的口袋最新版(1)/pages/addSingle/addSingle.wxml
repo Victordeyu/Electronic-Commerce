@@ -1,0 +1,50 @@
+<!--pages/addSingle/addSingle.wxml-->
+<view class="layout-fill layout-column">
+  <form bindsubmit="formSubmit" class="flex">
+
+    <view class='mana-form '>
+      <view class="text-right flex">品牌</view>
+      <input class="form-contral" name="brand" placeholder='请输入品牌' value='{{brand}}' />
+    </view>
+
+    <view class='mana-form '>
+      <view class="text-right flex">颜色</view>
+      <input class="form-contral" name="color" placeholder='请输入商品颜色' value='{{color}}' />
+    </view>
+
+
+    <view class='mana-form '>
+      <view class="text-right flex">CPU</view>
+      <input class="form-contral" name="cpu" placeholder='请输入CPU' value='{{cpu}}' />
+    </view>
+  
+
+    <view class='mana-form '>
+      <view class="text-right flex">磁盘</view>
+      <input class="form-contral" name="disk" placeholder='请输入磁盘' value='{{disk}}' />
+    </view>
+
+     <view class='mana-form '>
+      <view class="text-right flex">库存</view>
+      <input class="form-contral" name="inventory" placeholder='请输入商品库存' value='{{inventory}}' />
+    </view>
+
+     <view class='mana-form '>
+      <view class="text-right flex">内存</view>
+      <input class="form-contral" name="memory" placeholder='请输入内存' value='{{memory}}' />
+    </view>
+
+    <view class='mana-form '>
+      <view class="text-right flex">价格</view>
+      <input class="form-contral" name="price" placeholder='请输入价格' value='{{price}}' />
+    </view>
+
+    <view class='mana-form '>
+      <view class="text-right flex">图片URL</view>
+      <input class="form-contral" name="url" placeholder='请输入图片URL链接' value='{{url}}' />
+    </view>
+
+    <button formType="submit" style='margin-top:2em;' class="manage-action">保存</button>
+  </form>
+</view>
+

@@ -1,0 +1,29 @@
+<!--pages/register/register.wxml-->
+<view class="layout-fill layout-column">
+  <form bindsubmit="formSubmit" class="flex">
+    <view class='mana-form '>
+      <view class="text-right flex">商家账号</view>
+      <input class="form-contral" name="sellerAccount" placeholder='只能设置一次，请慎重' value='{{sellerAccount}}' />
+    </view>
+
+ <view class='mana-form '>
+      <view class="text-right flex">手机号码</view>
+      <input class="form-contral" name="sellerMobile" placeholder='请输入手机号码' value='{{sellerMobile}}' />
+    </view>
+
+
+    <view class='mana-form '>
+      <view class="text-right flex">商家名称</view>
+      <input class="form-contral" name="sellerName" placeholder='请输入商家名称' value='{{sellerName}}' />
+    </view>
+
+    <view class='mana-form '>
+      <view class="text-right flex">密码</view>
+      <input class="form-contral" type="password" name="sellerPassword" placeholder='请输入密码' value='{{sellerPassword}}' />
+    </view>
+
+    <button formType="submit" style='margin-top:2em;' class="manage-action">注册</button>
+  </form>
+
+</view>
+

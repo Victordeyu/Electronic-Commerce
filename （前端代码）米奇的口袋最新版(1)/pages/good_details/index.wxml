@@ -1,0 +1,76 @@
+<view class="detail_swiper">
+    <swiper autoplay="{{true}}" circular="{{true}}" indicator-dots="{{true}}">
+        <swiper-item
+        wx:for="{{goodsObj}}"
+        wx:key="singleId"
+        >
+            <image src="{{item.url}}" mode="widthFix" > </image>
+        </swiper-item>
+    </swiper>
+</view>
+
+<view class="goods_price"
+wx:if="{{goodsObj.length===0}}"
+>￥0</view>
+<view class="goods_price"
+wx:else
+>￥{{goodsObj[0].price}}</view>
+<view class="goods_name">{{proObj.productDesc}}</view>
+
+<view class="goods_info">
+    <view class="goods_info_title">图文详情</view>
+    <image src="{{proObj.url}}" />
+    <view class="goods_info_content"
+    wx:for="{{goodsObj}}"
+    wx:key="singleId"
+    >
+        <image mode="widthFix"src="{{item.url}}"></image>
+    </view>
+</view>
+
+<view class="btm_tool">
+    <view class="tool_item">
+        <view class="iconfont icon-fenxiang"></view>
+        <view>分享</view>
+        <button open-type="share"></button>
+    </view>
+    <navigator url="/pages/cart/index" class="tool_item">
+        <view class="iconfont icon-gouwuche"></view>
+        <view>购物车</view>
+    </navigator>
+
+
+    <van-cell class="tool_item_cart"  bindtap="showPopup">加入购物车</van-cell>
+
+    <view class="tool_item_buy">
+        <view>立即购买</view>
+    </view>
+    
+    <van-popup show="{{ show }}" position="bottom" custom-style="height: 70%" bind:close="onClose">
+        
+    <image class="chooseImage" src= "{{currentIndex===-1?proObj.url:goodurl }}" />
+    <view style="color:red;padding-left:20rpx;font-weight:600;font-size:32rpx;">￥{{currentIndex===-1?goodsObj[0].price:goodsObj[currentIndex].price}}</view>
+    <view style=";padding-left:20rpx;">库存：{{currentIndex===-1?0:goodsObj[currentIndex].inventory}}</view>
+    <view class="choose"
+    wx:for="{{goodsObj}}"
+    wx:for-item="item"
+    wx:for-index="index1"
+    wx:key="singleId"
+    >
+        <van-button type="{{index1===currentIndex?'danger':'default'}}" class="button_choose{{index1===currentIndex?'active':''}}"  bindtap="getInfo" data-in="{{index1}}" data-id="{{item.singleId}}" data-inven="{{item.inventory}}">
+            {{item.color}}  {{item.disk}}+{{item.memory}}  {{item.cpu}}
+        </van-button>
+    </view>
+    
+    
+    <view class="btm_tool">
+        <view class="tool_item_cart" bindtap="handleCartAdd"
+        >
+            <view>加入购物车</view>
+        </view>
+        <view class="tool_item_buy">
+            <view>立即购买</view>
+        </view>
+    </view>
+</van-popup>
+</view>

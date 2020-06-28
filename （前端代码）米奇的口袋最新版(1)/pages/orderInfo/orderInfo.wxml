@@ -1,0 +1,28 @@
+<!--pages/orderInfo/orderInfo.wxml-->
+<van-steps steps="{{steps}}" active="{{active}}" />
+
+<view>买家地址：{{order.buyerAddress}}</view>
+<view>买家名字：{{order.buyerName}}</view>
+<view>买家电话：{{order.buyerPhone}}</view>
+<view>订单创建时间：{{order.createTime}}</view>
+<view>订单ID：{{order.orderId}}</view>
+
+
+<view>
+   <block  wx:for="{{singles}}" wx:for-index="idx" wx:key="singleId" wx:for-item="single">
+      <van-card
+      num="{{order.orderDetailList[idx].count}}"
+      tag="{{single.cateGory==1 ? '电脑':'手机'}}"
+      price="{{single.price}}"
+      desc="{{single.color}} {{single.memory}}+{{single.disk}} {{single.cpu}}"
+      title="{{order.orderDetailList[idx].orderStatus==2?'已退货':''}}"
+      thumb="{{single.url}}"
+     >
+     </van-card>
+  </block>
+</view>
+
+
+<view class="btn">
+<van-button type="primary" bindtap="sendGoods" class="sendBtn">确认发货</van-button>
+</view>

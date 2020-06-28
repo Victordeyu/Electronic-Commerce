@@ -1,0 +1,20 @@
+
+<!--搜索框开始-->
+<SearchInput></SearchInput>
+<!--搜索框结束-->
+
+
+    <navigator class="goods_item"
+    wx:for="{{good}}"
+    wx:key="productId"
+    url="/pages/good_details/index?productId={{item.productId}}"
+    >
+        <!--左侧图片-->
+        <view class="goods_img_wrap">
+            <image mode="aspectFix||widthFix" src="{{item.url}}"></image>
+        </view>
+        <!--右侧文字-->
+        <view class="goods_info_wrap">
+            <view class="goods_name">{{item.productDesc}}</view>
+        </view>
+    </navigator>

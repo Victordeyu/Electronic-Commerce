@@ -1,0 +1,13 @@
+/* pages/select/select.wxss */
+.button {
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  margin-top: 400rpx;
+  margin-left: 300rpx;
+}
+
+.button1{
+    margin-bottom: 20rpx;
+}
+

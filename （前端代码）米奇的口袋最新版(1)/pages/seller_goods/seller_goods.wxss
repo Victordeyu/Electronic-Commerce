@@ -1,0 +1,19 @@
+/* pages/seller_goods/seller_goods.wxss */
+van-card{
+  border: 2rpx solid black;
+  box-sizing: border-box;
+  margin-bottom: 40rpx;
+}
+
+.goods {
+  margin-bottom: 70rpx;
+}
+
+.Btns{
+  display: flex;
+  margin-top: 30rpx;
+}
+
+.btn {
+  font-size: 30rpx;
+}

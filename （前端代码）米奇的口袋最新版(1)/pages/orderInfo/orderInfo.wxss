@@ -1,0 +1,9 @@
+/* pages/orderInfo/orderInfo.wxss */
+
+.btn{
+   margin-left: 500rpx;
+}
+
+.sendBtn{
+   margin-right: 10rpx !important;
+}

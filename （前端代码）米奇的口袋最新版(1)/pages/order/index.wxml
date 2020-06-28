@@ -1,0 +1,121 @@
+<Tabs tabs="{{tabs}}" bindtabsItemChange="handleTabsItemChange">
+    <block wx:if="{{orders.length!==0}}">
+        <block wx:if="{{tabs[0].isActive}}">
+        <view class="order_main">
+        <navigator class="order_item"
+        wx:for="{{orders}}"
+        wx:key="orderId"
+        url="/pages/order_detail/index?orderId={{item.orderId}}"
+        >
+            <view class="order_no_row">
+                <view class="order_no_text">订单编号</view>
+                <view class="order_no_value">{{item.orderId}}</view>
+            </view>
+            <view class="order_price_row">
+                <view class="order_price_text">订单价格</view>
+                <view class="order_price_value">￥{{item.orderAccount}}</view>
+            </view>
+            <view class="order_time_row">
+                <view class="order_time_text">订单日期</view>
+                <view class="order_time_value">{{item.createTime}}</view>
+            </view>
+            <view class="order_status_row">
+                <view class="order_status_text">订单状态</view>
+                <view class="order_status_value" wx:if="{{item.orderStatus===0}}">待付款</view>
+                <view class="order_status_value" wx:elif="{{item.orderStatus===3}}">已支付</view>
+                <view class="order_status_value" wx:elif="{{item.orderStatus===4}}">运送中</view>
+                <view class="order_status_value" wx:elif="{{item.orderStatus===1}}">已完成</view>
+                <view class="order_status_value" wx:elif="{{item.orderStatus===2}}">已取消</view>
+            </view>
+        </navigator>
+        </view>
+        </block>
+        <block wx:elif="{{tabs[1].isActive}}">
+        <view class="order_main">
+        <navigator class="order_item"
+        wx:for="{{orders}}"
+        wx:key="orderId"
+        wx:if="{{item.orderStatus===0}}"
+        url="/pages/order_detail/index?orderId={{item.orderId}}"
+        >
+            <view class="order_no_row">
+                <view class="order_no_text">订单编号</view>
+                <view class="order_no_value">{{item.orderId}}</view>
+            </view>
+            <view class="order_price_row">
+                <view class="order_price_text">订单价格</view>
+                <view class="order_price_value">￥{{item.orderAccount}}</view>
+            </view>
+            <view class="order_time_row">
+                <view class="order_time_text">订单日期</view>
+                <view class="order_time_value">{{item.createTime}}</view>
+            </view>
+            <view class="order_status_row">
+                <view class="order_status_text">订单状态</view>
+                <view class="order_status_value">待付款</view>
+            </view>
+        </navigator>
+        </view>
+        </block>
+        <block wx:elif="{{tabs[2].isActive}}">
+        <view class="order_main">
+        <navigator  class="order_item"
+        wx:for="{{orders}}"
+        wx:key="orderId"
+        wx:if="{{item.orderStatus===3||item.orderStatus===4}}"
+        url="/pages/order_detail/index?orderId={{item.orderId}}"
+        >
+            <view class="order_no_row">
+                <view class="order_no_text">订单编号</view>
+                <view class="order_no_value">{{item.orderId}}</view>
+            </view>
+            <view class="order_price_row">
+                <view class="order_price_text">订单价格</view>
+                <view class="order_price_value">￥{{item.orderAccount}}</view>
+            </view>
+            <view class="order_time_row">
+                <view class="order_time_text">订单日期</view>
+                <view class="order_time_value">{{item.createTime}}</view>
+            </view>
+            <view class="order_status_row">
+                <view class="order_status_text">订单状态</view>
+                <view class="order_status_value" wx:if="{{item.orderStatus===4}}">运送中</view>
+                <view class="order_status_value" wx:elif="{{item.orderStatus===3}}">待发货</view>
+            </view>
+        </navigator>
+        </view>
+        </block>
+        <block wx:elif="{{tabs[3].isActive}}">
+        <view class="order_main">
+        <navigator class="order_item"
+        wx:for="{{orders}}"
+        wx:key="orderId"
+        wx:if="{{item.orderStatus===2}}"
+        url="/pages/order_detail/index?orderId={{item.orderId}}"
+        >
+            <view class="order_no_row">
+                <view class="order_no_text">订单编号</view>
+                <view class="order_no_value">{{item.orderId}}</view>
+            </view>
+            <view class="order_price_row">
+                <view class="order_price_text">订单价格</view>
+                <view class="order_price_value">￥{{item.orderAccount}}</view>
+            </view>
+            <view class="order_time_row">
+                <view class="order_time_text">订单日期</view>
+                <view class="order_time_value">{{item.createTime}}</view>
+            </view>
+            <view class="order_status_row">
+                <view class="order_status_text">订单状态</view>
+                <view class="order_status_value">已取消</view>
+            </view>
+        </navigator>
+        </view>
+        </block>
+    </block>
+    <block wx:else>
+        <image src="http://m.qpic.cn/psc?/V10CTCaE2qU1dj/NrBG0KpF3EQEf3NYGEmEN8Pch6B9BlzeGQDXYwQdRyG0zaW7.63A84KFrH5*oSLCigfKyWYcGgpmjiUT16Rclw!!/b&bo=CgEKAQAAAAADByI!" mode="widthFix">
+            
+        </image>
+    </block>
+</Tabs>

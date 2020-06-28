@@ -1,0 +1,29 @@
+<!--pages/seller_report/seller_report.wxml-->
+<view class="Btns">
+  <button class="btn" bindtap="goods" plain>商品销量</button>
+  <button class="btn" bindtap="phone" plain>手机销量</button>
+   <button class="btn" bindtap="computer" plain>电脑销量</button>
+</view>
+
+<block wx:for="{{products}}" wx:for-index="idx" wx:key="productId" wx:for-item="product">
+      <van-card
+      num="销量：{{product.sales}}"
+      tag="{{product.cateGory===1 ? '电脑':'手机'}}"
+      price=""
+      desc="{{product.productDesc}}"
+      title="{{product.productName}}"
+      thumb="{{product.url}}"
+      />
+</block>
+
+ <block wx:for="{{singles}}" wx:for-index="idx" wx:key="singleId" wx:for-item="single">
+      <van-card
+      num="销量：{{single.sales}}"
+      tag="{{category==1 ? '电脑':'手机'}}"
+      price="{{single.price}}"
+      desc="{{single.color}} {{single.memory}}+{{single.disk}} {{single.cpu}}"
+      title=""
+      thumb="{{single.url}}"
+      >
+      </van-card>
+   </block>

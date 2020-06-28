@@ -1,0 +1,85 @@
+<view class="miqi_index"> 
+<!--搜索框开始-->
+<SearchInput></SearchInput>
+<!--搜索框结束-->
+<!--轮播图开始-->
+<view class="index_swiper">
+   <swiper autoplay interval="2000" circular indicator-dots>
+      <swiper-item>
+      <navigator url="/pages/good_list/index?query=1">
+         <image mode="widthFix" src="http://m.qpic.cn/psc?/V10CTCaE2qU1dj/jkqgNxaPJb7RsklupiKoXR4rxGCTJU8Z20zRInIrlHsPWfilX5*UxWOCqOKz79vfSQTKtCLXTiK6*mEtb5G9ELL*SGajJ6hWu7j1OkvSNVM!/b&bo=7gJUAQAAAAADF4s!"/>
+      </navigator>       
+      </swiper-item>
+
+      <swiper-item>
+      <navigator  url="/pages/good_list/index?query=2">
+          <image mode="widthFix" src="http://m.qpic.cn/psc?/V10CTCaE2qU1dj/jkqgNxaPJb7RsklupiKoXWAT2SJejN*BxrXE4iXgARcDm121kItO9VUXMXZL3FhHaIj95bLrlxKMejXC7VLrXRUhjXwkBqTZPtH2FuxBX.4!/b&bo=7gJUAQAAAAADF4s!"/>
+      </navigator>
+      </swiper-item>
+
+      <swiper-item>
+      <navigator url="/pages/good_list/index?query=3">
+         <image mode="widthFix" src="http://m.qpic.cn/psc?/V10CTCaE2qU1dj/NrBG0KpF3EQEf3NYGEmEN6yO5TnHGcw3gHrY2UGOsnKB2GddGnBgcy7zbiEXofDJ8OcQYoUEybX4.bG8xYAfyw!!/b&bo=7gJUAQAAAAADB5s!&rf=viewer_4" />
+      </navigator>
+      </swiper-item>
+   </swiper>
+</view>
+<!--轮播图结束-->
+<!--
+导航开始
+<view class="index_cate">
+   <navigator
+   wx:for="{{catesList}}"
+   wx:key="name"
+   >
+   <image mode="widthFix" src="{{item.image_src}}"></image>
+   </navigator>
+</view>
+导航结束-->
+
+<!--楼层开始-->
+<view class="index_floor">
+   <view class="floor_group" 
+   wx:for="{{floorList}}"
+   wx:for-item="item1"
+   wx:for-index="index1"
+   wx:key="floor_title"
+   >
+   <!--标题-->
+      <view class="floor_title">
+         <image mode="widthFix"src="{{item1.floor_title.image_src}}"> </image>
+      </view>
+   <!--内容-->
+      <view class="floor_list">
+         <navigator
+         wx:for="{{item1.product_list}}"
+         wx:for-item="item2"
+         wx:for-index="index2"
+         wx:key="name"
+         ><!--"widthFix"  "{{index2===0?'widthFix':'scaleToFill'}}"-->
+             <image mode="{{index2===0?'widthFix':'scaleToFill'}}" src="{{item2.image_src}}"/>
+         </navigator>
+      </view>
+   </view>
+</view>
+<!--楼层结束-->
+ </view>
+
+
+ <van-tabbar active="{{ active }}" bind:change="onChange">
+  <van-tabbar-item icon="home-o" >首页</van-tabbar-item>
+  <van-tabbar-item icon="apps-o">分类</van-tabbar-item>
+  <van-tabbar-item icon="shopping-cart-o">购物车</van-tabbar-item>
+  <van-tabbar-item icon="friends-o">我的</van-tabbar-item>
+</van-tabbar>
+
+
+
+
+<!--indicator-dots B站视频53集
+ <swiper autoplay interval="2000" circular >
+  <swiper-item> <image mode="widthFix" src="//gw.alicdn.com/imgextra/i4/11/O1CN01fdUhX11Bx4xm3dnJA_!!11-0-lubanu.jpg"/></swiper-item>
+   <swiper-item> <image mode="widthFix" src="https://aecpm.alicdn.com/simba/img/TB1CWf9KpXXXXbuXpXXSutbFXXX.jpg_q50.jpg"/> </swiper-item>
+    <swiper-item> <image mode="widthFix" src="https://aecpm.alicdn.com/simba/img/TB15tIjGVXXXXcoapXXSutbFXXX.jpg"/> </swiper-item>
+ </swiper>
+ -->

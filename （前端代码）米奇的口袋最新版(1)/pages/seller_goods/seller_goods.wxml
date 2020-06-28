@@ -1,0 +1,48 @@
+<!--pages/seller_goods/seller_goods.wxml-->
+<view>
+<van-search
+  value="{{ value }}"
+  shape="round"
+  background="#4fc08d"
+  placeholder="请输入搜索关键词"
+/>
+
+<view class="Btns">
+  <button class="btn" bindtap="allGoods" plain>全部商品</button>
+  <button class="btn" bindtap="onsaleGoods" plain>上架商品</button>
+  <button class="btn" bindtap="offsaleGoods" plain>下架商品</button>
+  <button bindtap='addGood' class="btn" plain>新增商品</button>
+</view>
+</view>
+
+<view>
+<scroll-view class="goods">
+ <block wx:for="{{products}}" wx:for-index="idx" wx:key="productId" wx:for-item="product">
+      <van-card
+      num=""
+      tag="{{product.cateGory===1 ? '电脑':'手机'}}"
+      price="0.00"
+      desc="{{product.productDesc}}"
+      title="{{product.productName}}"
+      thumb="{{product.url}}"
+      >
+     <view class="twoBtn" slot="footer" >
+        <van-button size="mini" bindtap="lookUpSingle" data-id="{{product.productId}}" data-category="{{product.cateGory}}" data-sellerid="{{product.sellerId}}">查看单品</van-button>
+        <van-button size="mini" bindtap="alterInfo" data-id="{{product.productId}}">修改</van-button>
+        <van-button size="mini"  bindtap="delete" data-id="{{product.productId}}">删除</van-button>
+        <van-button size="mini" bindtap="onsale" data-id="{{product.productId}}">上架</van-button>
+         <van-button size="mini" bindtap="offsale" data-id="{{product.productId}}">下架</van-button>
+      </view>
+      </van-card>
+    </block>
+</scroll-view>
+ </view> 
+
+<view>
+<van-tabbar active="{{ active }}" bind:change="onChange">
+  <van-tabbar-item icon="home-o" name="order">订单</van-tabbar-item>
+  <van-tabbar-item icon="search" name="goods">商品</van-tabbar-item>
+  <van-tabbar-item icon="setting-o" name="personal">我的</van-tabbar-item>
+</van-tabbar>
+</view>
+
